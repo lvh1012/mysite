@@ -25,3 +25,10 @@ Một **project** có nhiều **application**. Project **mysite** có applicatio
 :point_right: Dựa vào url sẽ gọi đến file [/home/urls.py](home/urls.py)   
 :point_right: Mỗi url sẽ gọi đến một hàm trong file [/home/views.py](home/views.py)   
 :point_right: Các hàm xử lý logic, đọc dữ liệu từ database thông qua [/home/models.py](home/models.py) và render html từ các file trong [/home/teamples](home/teamplates)   
+### Hướng dẫn cài đặt
+```
+pip3 install Django==4.0.3
+git clone https://github.com/lvh1012/mysite.git
+cd mysite
+python3 manage.py runserver 0.0.0.0:1234 
+```
