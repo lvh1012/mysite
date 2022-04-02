@@ -53,10 +53,10 @@
             </div>
         </header>
         <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
+        <section class="page-section portfolio" id="btc">
             <div class="container">
                 <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">BTCUSD</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -65,7 +65,7 @@
                 </div>
                 <!-- Portfolio Grid Items-->
                 <div class="row justify-content-center">
-                    <!-- Portfolio Item 1-->
+                    {% comment %} <!-- Portfolio Item 1-->
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -109,16 +109,23 @@
                             </div>
                             <img class="img-fluid" src="{% static 'assets/img/portfolio/safe.png' %}" alt="..." />
                         </div>
-                    </div>
+                    </div> {% endcomment %}
                     <!-- Portfolio Item 6-->
-                    <div class="col-md-6 col-lg-4">
+                    {% comment %} <div class="col-md-6 col-lg-4">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
                             <img class="img-fluid" src="{% static 'assets/img/portfolio/submarine.png' %}" alt="..." />
                         </div>
-                    </div>
+                    </div> {% endcomment %}
+                    <div class="tradingview-widget-container col-md-6 col-lg-12" style="height: 600px">
+                        <div id="tradingview_6e252" style="height: 100%;"></div>
+                        <div class="tradingview-widget-copyright">
+                            <a href="https://vn.tradingview.com/symbols/BTCUSDT/?exchange=BINANCE" rel="noopener" target="_blank">
+                                <span class="blue-text">BTCUSDT Biểu đồ</span> 
+                            </a> bởi TradingView
+                        </div>
                 </div>
             </div>
         </section>
@@ -162,6 +169,7 @@
                         Free Download!
                     </a>
                 </div> {% endcomment %}
+                
             </div>
         </section>
         <!-- Pub Section-->
@@ -180,17 +188,17 @@
                     <ul>
                         <li>
                             <p class="lead">
-                                Tran Dinh Cuong,<b> Nguyen Linh Giang</b>. <b><i>"Intrusion detection under covariate shift using modified support vector machine and modified backpropagation"</i></b>. SoICT2012. Pp 266-271
+                                Tran Dinh Cuong,<b> Nguyen Linh Giang</b>. <a href="{% static 'pdf/test.pdf' %}" target="_blank"><b><i>"Intrusion detection under covariate shift using modified support vector machine and modified backpropagation"</i></b></a>. SoICT2012. Pp 266-271
                             </p>
                         </li>
                         <li>
                             <p class="lead">
-                                Tran Dinh Cuong,<b> Nguyen Linh Giang</b>. <b><i>"Intrusion detection under covariate shift using modified support vector machine and modified backpropagation"</i></b>. SoICT2012. Pp 266-271
+                                Tran Dinh Cuong,<b> Nguyen Linh Giang</b>. <a href="{% static 'pdf/test.pdf' %}" target="_blank"><b><i>"Intrusion detection under covariate shift using modified support vector machine and modified backpropagation"</i></b></a>. SoICT2012. Pp 266-271
                             </p>
                         </li>
                         <li>
                             <p class="lead">
-                                Tran Dinh Cuong,<b> Nguyen Linh Giang</b>. <b><i>"Intrusion detection under covariate shift using modified support vector machine and modified backpropagation"</i></b>. SoICT2012. Pp 266-271
+                                Tran Dinh Cuong,<b> Nguyen Linh Giang</b>. <a href="{% static 'pdf/test.pdf' %}" target="_blank"><b><i>"Intrusion detection under covariate shift using modified support vector machine and modified backpropagation"</i></b></a>. SoICT2012. Pp 266-271
                             </p>
                         </li>
                     </ul> 
@@ -551,5 +559,28 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+        new TradingView.widget(
+        {
+            "autosize": true,
+            "symbol": "BINANCE:BTCUSDT",
+            "interval": "D",
+            "timezone": "Etc/UTC",
+            "theme": "light",
+            "style": "1",
+            "locale": "vi_VN",
+            "toolbar_bg": "#f1f3f6",
+            "enable_publishing": false,
+            "allow_symbol_change": true,
+            "container_id": "tradingview_6e252",
+            "watchlist": [
+                "BINANCE:ETHUSDT",
+                "BINANCE:BNBUSDT",
+                "BINANCE:SOLUSDT",
+                "BINANCE:AVAXUSDT",
+            ],
+        });
+        </script>
     </body>
 </html>
