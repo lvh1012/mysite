@@ -237,7 +237,7 @@ sup {
 
 a {
   color: #1abc9c;
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:hover {
   color: #15967d;
@@ -11459,7 +11459,7 @@ html {
   }
 }
 .portfolio .portfolio-item {
-  cursor: pointer;
+  /* cursor: pointer; */
   position: relative;
   display: block;
   max-width: 25rem;
@@ -11506,4 +11506,17 @@ html {
 
 .copyright {
   background-color: #1a252f;
+}
+
+.post-link {
+  /* text-align: left; */
+  color: #097E6A;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.post-date{
+  /* text-align: right; */
+  font-size: 0.75rem;
+  color: #818181;
 }
