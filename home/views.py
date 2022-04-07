@@ -5,5 +5,8 @@ from django.http import HttpResponse
 def index(request):
     return render(request, 'pages/index.html')
 
-def lesson(request):
-    return render(request, 'pages/lesson.html')
+def learning(request):
+    return render(request, 'pages/learning.html')
+
+def leeson(request):
+    return render(request, 'pages/leeson.html')
