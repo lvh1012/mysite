@@ -30,5 +30,7 @@ Một **project** có nhiều **application**. Project **mysite** có applicatio
 pip3 install Django==4.0.3
 git clone https://github.com/lvh1012/mysite.git
 cd mysite
+python3 manage.py makemigrations
+python3 manage.py migrate
 python3 manage.py runserver 0.0.0.0:1234 
 ```
