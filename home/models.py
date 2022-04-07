@@ -10,6 +10,8 @@ class Lesson(models.Model):
         on_delete=models.CASCADE,
     )
     title = models.CharField(max_length=256)
+    thumbnail = models.ImageField(null=True)
+    summary = models.CharField(max_length=1024)
     content = models.TextField(blank=True)
     created_time = models.DateTimeField(auto_now_add=True)
 

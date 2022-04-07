@@ -1,2 +1,4 @@
-__pycache__/
+home/__pycache__/
+mysite/__pycache__/
 *.py[cod]
+media/

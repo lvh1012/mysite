@@ -6,7 +6,7 @@
 <section class="page-section portfolio">
     <div class="container">
         <!-- Portfolio Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Lessons</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Learning</h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
@@ -16,17 +16,19 @@
         <!-- Portfolio Grid Items-->
         <div class="row justify-content-center">
             <ul id="lessons">
+                {% for lesson in lessons %}
                 <div class="row py-4 border-bottom">
-                    <div class="col-lg-3 col-md-3 hidden-xs hidden-sm">
-                        <a href="{% url 'leeson' %}"><img src="https://machinelearningcoban.com/images/road.jpg" style="max-width: 100%"> </a>
+                    <div class="col-lg-3 col-md-3 hidden-xs hidden-sm text-center">
+                        <a href="{% url 'lesson' id=lesson.id %}"><img src="{{lesson.thumbnail.url}}" style="max-width: 100%"> </a>
                     </div>
                     <div class="col-lg-8 col-md-8 hidden-xs hidden-sm">
-                        <a class="post-link" href="{% url 'leeson' %}"> Con đường học PhD của tôi</a>
-                        <span class="post-date">Oct 11, 2018</span>
+                        <a class="post-link" href="{% url 'lesson' id=lesson.id %}"> {{lesson.title}}</a>
+                        <span class="post-date">{{lesson.created_time|date:"M d, Y"}}</span>
                         <br>
-                        Luôn hy vọng, nhưng đừng kỳ vọng quá cao. Phải hy vọng và lạc quan vì suy nghĩ tiêu cực không bao giờ khiến vấn đề tốt lên. Đừng kỳ vọng cao để khi kết quả không như ý muốn mình không bị suy sụp
+                        {{lesson.summary}}
                     </div>
                 </div>
+                {% endfor %}
               </ul>
         </div>
     </div>

@@ -11,10 +11,12 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+DOMAIN = 'https://facebook.com/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -24,6 +26,7 @@ SECRET_KEY = 'django-insecure-k2f75o+3fkbr(j)r+(bp)y#$v*m*55_*_6zc7+btm1ca812ykf
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
 
 ALLOWED_HOSTS = ['*']
 
@@ -117,6 +120,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+
+MEDIA_URL = 'media/' #upload file
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # thu muc media goc
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
