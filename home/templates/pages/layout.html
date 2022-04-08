@@ -40,7 +40,7 @@
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="{% static 'assets/img/avataaars.svg' %}" alt="..." />
+                <!-- <img class="masthead-avatar mb-5" src="{% static 'assets/img/avataaars.svg' %}" alt="..." /> -->
                 <!-- Masthead Heading-->
                 <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
                 <!-- Icon Divider-->
@@ -69,7 +69,7 @@
                 </div>
                 <!-- About Section Content-->
                 <div class="row justify-content-center">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    {% comment %} <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                        <div class="portfolio-item mx-auto mb-3">
                         <div class="portfolio-item-caption d-flex align-items-center justify-content-between h-100 w-100">
                             <a href="mailto: abc@example.com" target="blank" class="col portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-envelope fa-2x"></i></a>
@@ -97,8 +97,8 @@
                             Kỹ sư Lê Đắc Khánh
                         </h5>
                         <p class="text-center lead">AI Engineer</p>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    </div> {% endcomment %}
+                    {% comment %} <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                        <div class="portfolio-item mx-auto mb-3">
                         <div class="portfolio-item-caption d-flex align-items-center justify-content-between h-100 w-100">
                             <a href="mailto: abc@example.com" target="blank" class="col portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-envelope fa-2x"></i></a>
@@ -111,57 +111,80 @@
                             Thạc sĩ Lê Viết Hoàng
                         </h5>
                         <p class="text-center lead">Security Engineer</p>
-                    </div> 
-                    {% comment %} <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-between h-100 w-100 p-5">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-envelope fa-3x"></i></div>
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-brands fa-linkedin fa-3x"></i></div>
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-brands fa-facebook-square fa-3x"></i></div>
+                    </div> {% endcomment %}
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="card card-team">
+                            <div class="card-body">
+                                <img class="card-team-img mb-3" src="https://sb-ui-kit-pro.startbootstrap.com/assets/img/illustrations/profiles/profile-1.png" alt="...">
+                                <div class="card-team-name">Valerie Luna</div>
+                                <div class="card-team-position mb-3">Managing Partner</div>
+                                <p class="mb-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                             </div>
-                            <img class="img-fluid" src="{% static 'assets/img/portfolio/submarine.png' %}" alt="..." />
-                        </div>
-                        <h5 class="text-center">
-                            Thạc sĩ Lê Huy Hoàng
-                        </h5>
-                        <p class="text-center lead">AI Researcher</p>
-                    </div> 
-                    <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-between h-100 w-100 p-5">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-envelope fa-3x"></i></div>
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-brands fa-linkedin fa-3x"></i></div>
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-brands fa-facebook-square fa-3x"></i></div>
+                            <div class="card-footer text-center">
+                                <a class="btn btn-icon btn-transparent-dark mx-1" href="#!">
+                                    <i class="fab fa-solid fa-envelope"></i>
+                                </a>
+                                <a class="btn btn-icon btn-transparent-dark mx-1" href="#!">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a class="btn btn-icon btn-transparent-dark mx-1" href="#!">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a class="btn btn-icon btn-transparent-dark mx-1" href="#!">
+                                    <i class="fab fa-github"></i> 
+                                </a>
                             </div>
-                            <img class="img-fluid" src="{% static 'assets/img/portfolio/submarine.png' %}" alt="..." />
                         </div>
-                        <h5 class="text-center">
-                            Thạc sĩ Lê Huy Hoàng
-                        </h5>
-                        <p class="text-center lead">AI Researcher</p>
                     </div> 
-                    <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-between h-100 w-100 p-5">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-solid fa-envelope fa-3x"></i></div>
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-brands fa-linkedin fa-3x"></i></div>
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-brands fa-facebook-square fa-3x"></i></div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="card card-team">
+                            <div class="card-body">
+                                <img class="card-team-img mb-3" src="https://sb-ui-kit-pro.startbootstrap.com/assets/img/illustrations/profiles/profile-1.png" alt="...">
+                                <div class="card-team-name">Valerie Luna</div>
+                                <div class="card-team-position mb-3">Managing Partner</div>
+                                <p class="mb-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                             </div>
-                            <img class="img-fluid" src="{% static 'assets/img/portfolio/submarine.png' %}" alt="..." />
+                            <div class="card-footer text-center">
+                                <a class="btn btn-icon btn-transparent-dark mx-1" href="#!">
+                                    <i class="fab fa-solid fa-envelope"></i>
+                                </a>
+                                <a class="btn btn-icon btn-transparent-dark mx-1" href="#!">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a class="btn btn-icon btn-transparent-dark mx-1" href="#!">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a class="btn btn-icon btn-transparent-dark mx-1" href="#!">
+                                    <i class="fab fa-github"></i> 
+                                </a>
+                            </div>
                         </div>
-                        <h5 class="text-center">
-                            Thạc sĩ Lê Huy Hoàng
-                        </h5>
-                        <p class="text-center lead">AI Researcher</p>
-                    </div>  {% endcomment %}
+                    </div> 
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="card card-team">
+                            <div class="card-body">
+                                <img class="card-team-img mb-3" src="https://sb-ui-kit-pro.startbootstrap.com/assets/img/illustrations/profiles/profile-1.png" alt="...">
+                                <div class="card-team-name">Valerie Luna</div>
+                                <div class="card-team-position mb-3">Managing Partner</div>
+                                <p class="mb-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <a class="btn btn-icon btn-transparent-dark mx-1" href="#!">
+                                    <i class="fab fa-solid fa-envelope"></i>
+                                </a>
+                                <a class="btn btn-icon btn-transparent-dark mx-1" href="#!">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a class="btn btn-icon btn-transparent-dark mx-1" href="#!">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a class="btn btn-icon btn-transparent-dark mx-1" href="#!">
+                                    <i class="fab fa-github"></i> 
+                                </a>
+                            </div>
+                        </div>
+                    </div> 
                 </div>
-                <!-- About Section Button-->
-                {% comment %} <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
-                        <i class="fas fa-download me-2"></i>
-                        Free Download!
-                    </a>
-                </div> {% endcomment %}
             </div>
         </section>
         <!-- Contact Section-->
@@ -229,7 +252,7 @@
                             <!-- an error submitting the form-->
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             <!-- Submit Button-->
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
+                            <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Send</button>
                         </form>
                     </div>
                 </div>

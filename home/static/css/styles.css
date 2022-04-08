@@ -11507,3 +11507,36 @@ html {
 .copyright {
   background-color: #1a252f;
 }
+
+.card-team {
+  background-color: darkcyan;
+  overflow: visible;
+  margin-top: 3rem;
+}
+
+.card-team .card-body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.card-team .card-body .card-team-img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 100%;
+  margin-top: -4.5rem;
+  box-shadow: 0 0.125rem 0.25rem 0 rgb(33 40 50 / 20%);
+}
+
+.card-team .card-body .card-team-name {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.card-team .card-body .card-team-position {
+  font-style: italic;
+  color: #a7aeb8;
+  font-size: 1rem;
+}
