@@ -4,13 +4,18 @@ from django.urls import resolve
 from .models import Lesson
 from django.http import Http404
 from django.conf import settings
+from django.core.paginator import Paginator #import Paginator
 
 # Create your views here.
 def index(request):
     return render(request, 'pages/index.html')
 
 def learning(request):
-    context = {'lessons': Lesson.objects.all().order_by('-created_time')}
+    lessons = Lesson.objects.all().order_by('-created_time')
+    paginator = Paginator(lessons, 2)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    context = {'lessons': page_obj}
     return render(request, 'pages/learning.html', context)
 
 def lesson(request, id):

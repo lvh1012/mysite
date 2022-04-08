@@ -70,19 +70,55 @@
                     </div>
                 </div>
                 {% endif %}
-                <!-- Pagination-->
+                
+                <!--Pagination-->
                 <nav aria-label="Pagination">
                     <hr class="my-0">
                     <ul class="pagination justify-content-center my-4">
-                        <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Newer</a></li>
-                        <li class="page-item active" aria-current="page"><a class="page-link" href="#!">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#!">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#!">3</a></li>
-                        <li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
-                        <li class="page-item"><a class="page-link" href="#!">15</a></li>
-                        <li class="page-item"><a class="page-link" href="#!">Older</a></li>
+                    {% if lessons.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ lessons.previous_page_number }}">Previous</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Previous</a>
+                    </li>
+                    {% endif %}
+
+                    {% if lessons.number|add:'-4' > 1 %}
+                        <li class="page-item"><a class="page-link" href="?page={{ lessons.number|add:'-5' }}">&hellip;</a></li>
+                    {% endif %}
+
+                    {% for i in lessons.paginator.page_range %}
+                        {% if lessons.number == i %}
+                            <li class="page-item active" aria-current="page">
+                        <span class="page-link">
+                            {{ i }}
+                            <span class="sr-only">(current)</span>
+                        </span>
+                        </li>
+                        {% elif i > lessons.number|add:'-5' and i < lessons.number|add:'5' %}
+                            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if lessons.paginator.num_pages > lessons.number|add:'4' %}
+                    <li class="page-item"><a class="page-link" href="?page={{ lessons.number|add:'5' }}">&hellip;</a></li>
+                    {% endif %}
+
+                    {% if lessons.has_next %}
+                        <li class="page-item">
+                        <a class="page-link" href="?page={{ lessons.next_page_number }}">Next</a>
+                    </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Next</a>
+                    </li>
+                    {% endif %}
                     </ul>
                 </nav>
+                <!--end of Pagination-->
+
             </div>
             <!-- Side widgets-->
             <div class="col-lg-4">
