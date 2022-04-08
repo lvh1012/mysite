@@ -3,6 +3,14 @@ from django.contrib.auth.models import User # model User
 from django.conf import settings
 from django.utils.timezone import now
 
+# tag cua bai viet
+class Tag(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    name = models.CharField(max_length=256, unique=True)
+
+    def __str__(self):
+        return self.name
+
 class Lesson(models.Model):
     id = models.BigAutoField(primary_key=True)
     author = models.ForeignKey(
@@ -14,6 +22,10 @@ class Lesson(models.Model):
     summary = models.CharField(max_length=1024)
     content = models.TextField(blank=True)
     created_time = models.DateTimeField(auto_now_add=True)
+    tags = models.ManyToManyField(Tag)
+
+    def __str__(self):
+        return self.title
 
     # format data 
     # @admin.display
@@ -24,3 +36,4 @@ class Lesson(models.Model):
     #         self.first_name,
     #         self.last_name,
     #     )
+

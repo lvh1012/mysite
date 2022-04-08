@@ -11507,16 +11507,3 @@ html {
 .copyright {
   background-color: #1a252f;
 }
-
-.post-link {
-  /* text-align: left; */
-  color: #097E6A;
-  font-weight: bold;
-  font-size: 1.25rem;
-}
-
-.post-date{
-  /* text-align: right; */
-  font-size: 0.75rem;
-  color: #818181;
-}
