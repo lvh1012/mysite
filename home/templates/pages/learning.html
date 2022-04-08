@@ -77,7 +77,7 @@
                     <ul class="pagination justify-content-center my-4">
                     {% if lessons.has_previous %}
                     <li class="page-item">
-                        <a class="page-link" href="?page={{ lessons.previous_page_number }}">Previous</a>
+                        <a class="page-link" href="{% url 'learning' %}{% url 'learning' %}?page={{ lessons.previous_page_number }}">Previous</a>
                     </li>
                     {% else %}
                     <li class="page-item disabled">
@@ -86,7 +86,7 @@
                     {% endif %}
 
                     {% if lessons.number|add:'-4' > 1 %}
-                        <li class="page-item"><a class="page-link" href="?page={{ lessons.number|add:'-5' }}">&hellip;</a></li>
+                        <li class="page-item"><a class="page-link" href="{% url 'learning' %}?page={{ lessons.number|add:'-5' }}">&hellip;</a></li>
                     {% endif %}
 
                     {% for i in lessons.paginator.page_range %}
@@ -98,17 +98,17 @@
                         </span>
                         </li>
                         {% elif i > lessons.number|add:'-5' and i < lessons.number|add:'5' %}
-                            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                            <li class="page-item"><a class="page-link" href="{% url 'learning' %}?page={{ i }}">{{ i }}</a></li>
                         {% endif %}
                     {% endfor %}
 
                     {% if lessons.paginator.num_pages > lessons.number|add:'4' %}
-                    <li class="page-item"><a class="page-link" href="?page={{ lessons.number|add:'5' }}">&hellip;</a></li>
+                    <li class="page-item"><a class="page-link" href="{% url 'learning' %}?page={{ lessons.number|add:'5' }}">&hellip;</a></li>
                     {% endif %}
 
                     {% if lessons.has_next %}
                         <li class="page-item">
-                        <a class="page-link" href="?page={{ lessons.next_page_number }}">Next</a>
+                        <a class="page-link" href="{% url 'learning' %}?page={{ lessons.next_page_number }}">Next</a>
                     </li>
                     {% else %}
                         <li class="page-item disabled">
