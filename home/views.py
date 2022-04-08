@@ -12,7 +12,7 @@ def index(request):
 
 def learning(request):
     lessons = Lesson.objects.all().order_by('-created_time')
-    paginator = Paginator(lessons, 2)
+    paginator = Paginator(lessons, 2) # mac dinh 2 item
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     context = {'lessons': page_obj}
