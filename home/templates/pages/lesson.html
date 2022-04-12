@@ -3,10 +3,16 @@
 
 
 {% block style%}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css" integrity="sha512-KUoB3bZ1XRBYj1QcH4BHCQjurAZnCO3WdrswyLDtp7BMwCw7dPZngSLqILf68SGgvnWHTD5pPaYrXi6wiRJ65g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
-    #post-content > * {
-        
+    #post-content img {
+        max-width: 100%;
+        height: auto;
     }
+    #post-content a {
+        color: #1abc9c !important;
+        text-decoration: none;
+      }
 </style>
 {% endblock%}
 
@@ -41,7 +47,7 @@
                     <!-- Preview image figure-->
                     <figure class="mb-4"><img class="img-fluid rounded" src="{{lesson.thumbnail.url}}" alt="{{lesson.title}}"></figure>
                     <!-- Post content-->
-                    <section class="mb-5" id="post-content">
+                    <section class="mb-5 markdown-body" id="post-content">
                         {% comment %} <p class="fs-5 mb-4">Science is an enterprise that should be cherished as an activity of the free human mind. Because it transforms who we are, how we live, and it gives us an understanding of our place in the universe.</p>
                         <p class="fs-5 mb-4">The universe is large and old, and the ingredients for life as we know it are everywhere, so there's no reason to think that Earth would be unique in that regard. Whether of not the life became intelligent is a different question, and we'll see if we find that.</p>
                         <p class="fs-5 mb-4">If you get asteroids about a kilometer in size, those are large enough and carry enough energy into our system to disrupt transportation, communication, the food chains, and that can be a really bad day on Earth.</p>
@@ -105,6 +111,6 @@
 {% block script %}
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
-    document.getElementById('post-content').innerHTML = marked.parse(`{{lesson.content}}`);
+    document.getElementById('post-content').innerHTML = marked.parse(`{{lesson.content | escapejs}}`);
 </script>
 {% endblock script%}

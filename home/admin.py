@@ -6,7 +6,7 @@ from pagedown.widgets import AdminPagedownWidget
 
 @admin.register(Lesson)
 class LessonAdmin(admin.ModelAdmin):
-    list_display = ('author', 'title' , 'content', 'created_time')
+    list_display = ('author', 'title' , 'created_time')
     search_fields = ['title']
     formfield_overrides = {
         models.TextField: {'widget': AdminPagedownWidget },
