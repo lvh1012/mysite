@@ -21,7 +21,8 @@ from django.conf.urls import handler404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('home.urls'))
+    path('', include('home.urls')),
+    path('', include('pagedown.urls'))
 ]
 
 if settings.DEBUG:
