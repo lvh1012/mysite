@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.db import models
-from .models import Lesson, Tag
+from .models import Lesson, Tag, Image
 from pagedown.widgets import AdminPagedownWidget
 # Register your models here.
 
@@ -16,3 +16,8 @@ class LessonAdmin(admin.ModelAdmin):
 class TagAdmin(admin.ModelAdmin):
     list_display = ('name',)
     search_fields = ['name']
+
+@admin.register(Image)
+class ImageAdmin(admin.ModelAdmin):
+    list_display = ('description',)
+    search_fields = ['description']

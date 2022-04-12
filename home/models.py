@@ -37,3 +37,7 @@ class Lesson(models.Model):
     #         self.last_name,
     #     )
 
+class Image(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    description = models.CharField(max_length=1024)
+    thumbnail = models.ImageField(null=True)
