@@ -3,4 +3,3 @@ __pycache__/
 /home/migrations/__pycache__/
 /mysite/__pycache__/
 *.py[cod]
-media/
